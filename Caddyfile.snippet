@@ -1,0 +1,13 @@
+# Not a standalone Caddyfile — paste this `handle` block into the
+# existing `discovery.sjel.net {}` site block in Discovery's real
+# Caddyfile (outside this repo). See README §7.4 and HOTSPOT-002.
+
+  handle /stitch/api/* {
+    uri strip_prefix /stitch/api
+    reverse_proxy stitch-backend:8001
+  }
+
+  handle /stitch/* {
+    uri strip_prefix /stitch
+    reverse_proxy stitch-frontend:4173
+  }

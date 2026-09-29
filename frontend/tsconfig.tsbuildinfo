@@ -1,0 +1,1 @@
+{"root":["./src/app.tsx","./src/api.ts","./src/main.tsx","./src/vite-env.d.ts","./src/components/dropzone.tsx","./src/components/liquidbutton.tsx","./src/components/resultcard.tsx","./src/components/statusbar.tsx","./src/components/svgpreview.tsx","./src/components/thresholdslider.tsx"],"version":"5.9.3"}

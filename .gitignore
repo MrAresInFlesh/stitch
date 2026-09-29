@@ -1,0 +1,46 @@
+# --- IDE / editor ---
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# --- OS ---
+.DS_Store
+Thumbs.db
+
+# --- Python (backend) ---
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+env/
+*.egg
+.mypy_cache/
+.ruff_cache/
+.pytest_cache/
+
+# --- Node / frontend ---
+node_modules/
+dist/
+dist-ssr/
+*.local
+.vite/
+
+# --- Env / secrets ---
+.env
+.env.*
+!.env.example
+
+# --- Docker ---
+*.pid
+
+# --- Conversion scratch (backend never persists files, but just in case) ---
+*.dst
+*.pes
+*.zip
+!frontend/public/**/*.zip
+
+# --- Logs ---
+*.log
+npm-debug.log*

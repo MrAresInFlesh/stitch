@@ -1,0 +1,25 @@
+# Standalone compose file for this repo. README §7.3 describes these two
+# services as an addition to the existing SJEL Discovery compose file —
+# that file lives outside this repo, so merge these service blocks into
+# it by hand when deploying alongside Discovery (see HOTSPOT-002).
+#
+# The `sjel` network is expected to already exist (created by Discovery's
+# compose file) so both apps can be reached from the same Caddy container.
+
+services:
+  stitch-frontend:
+    build:
+      context: ./frontend
+    restart: unless-stopped
+    networks: [sjel]
+
+  stitch-backend:
+    build:
+      context: ./backend
+    restart: unless-stopped
+    networks: [sjel]
+    # No volumes — all processing is in-memory tmpdir
+
+networks:
+  sjel:
+    external: true

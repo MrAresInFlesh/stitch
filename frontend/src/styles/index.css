@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@300;400;600&family=Space+Mono:wght@400;700');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-bg-base:      0   0   0;
+  --color-bg-surface:   10  10  10;
+  --color-bg-elevated:  20  20  20;
+  --color-border:       56  56  56;
+  --color-border-subtle:86  86  86;
+  --color-text-primary: 255 255 255;
+  --color-text-secondary:214 214 214;
+  --color-text-muted:   176 176 176;
+  --color-text-faint:   128 128 128;
+  --color-accent:       245 245 245;
+  --color-accent-dim:   140 140 140;
+  --color-accent-bright:255 255 255;
+  --color-gold:         196 168 106;   /* limited use only */
+}
+
+* { border-radius: 0 !important; }
+* { box-sizing: border-box; }
+
+body {
+  background-color: rgb(var(--color-bg-base));
+  color: rgb(var(--color-text-primary));
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 18px;
+}
+
+h1, h2, h3, h4, h5, h6 { font-family: 'Bebas Neue', sans-serif; }
+code, pre, .font-mono    { font-family: 'Space Mono', monospace; }
+
+/* Animated border-pulse used by StatusBar while uploading (§5.7) */
+@keyframes border-pulse {
+  0%, 100% { border-color: rgb(var(--color-border)); }
+  50%      { border-color: rgb(var(--color-border-subtle)); }
+}
+.animate-border-pulse {
+  animation: border-pulse 1.4s ease-in-out infinite;
+}
